@@ -1,0 +1,268 @@
+*, *::before, *::after{ box-sizing: border-box; }
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #FAFAFA;
+    color: #202020;
+}
+
+/*HEADER*/
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header-logo h1{
+    font-size: 0.875rem;
+    margin-left: 0.5em;
+}
+
+.header-image{
+    width: 35px;
+    height: 35px;
+}
+
+nav a{
+    margin-right: 0.5em;
+    text-decoration: none;
+    color: #202020;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/*MAIN*/
+
+.main-section{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 5em 0.5em 0 0.5em;
+    width: 100%;
+    height: 293px;
+    background-image: url(images/image.jpg);
+    background-size: cover;
+    color: #FAFAFA;
+}
+
+.main-section h1,
+.main-description,
+.date-time{ margin: 5px 12px 5px 12px; }
+
+.main-section h1{ font-size: 2rem; }
+
+.main-description{
+    font-size: 1rem;
+    margin-bottom: 1.5em;
+}
+
+.date-time{ font-size: 0.75rem; }
+
+/*ARTICLES*/
+
+.article-recent{ padding: 2em 1em 0 1em; }
+
+.article-image{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.article-recent h2,
+.article-recent p{ margin: 12px 0 12px 0; }
+
+.date-time-article{ font-size: 0.875rem; }
+
+.button-container{ text-align: center; }
+
+.view-more{
+    margin-top: 2em;
+    padding: 0.75em 2em 0.75em 2em;
+    background-color:#202020;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+/*ABOUT US*/
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0em 1em 0em 1em;
+}
+
+.about-us img{
+    width: 182px;
+    height: 182px;
+    border-radius: 50%;
+    margin: 1em 0 1em 0;
+}
+
+.recent-post-text{
+    margin: 0em 1em 0em 1em;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 2em;
+    border-top: 2px #202020 solid;
+}
+
+.recent-post-text p{ margin-top: 2em; }
+
+/*FOOTER*/
+
+footer{
+    background-color: #202020;
+    color: #FFFFFF;
+    padding: 2em;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 3.5em;
+}
+
+footer p,
+footer h2{ margin: 10px; }
+
+/*MEDIA QUERIES*/
+
+/*MEDIA QUERIE FOR LARGE DEVICES*/
+
+@media (min-width: 768px){
+    
+    /*HEADER*/
+    
+    .header-content{ padding: 1em 3em 1em 3em; }
+    
+    .header-logo h1{ font-size: 1.25rem; }
+
+    .main-menu{
+        display: flex;
+        list-style: none;
+    }
+        
+    nav a{ font-size: 1rem; }
+
+    .open-menu, 
+    .close-menu{ display: none; }
+
+    /*MAIN*/
+
+    .main-section{
+        height: 488px;
+        background-image: url(images/image.jpg);
+    }
+
+    .main-section h1,
+    .main-description,
+    .date-time{
+        margin: 5px 40px 5px 40px;
+        width: 50%;
+    }   
+
+    .main-description{ margin-bottom: 4em; }
+
+    /*ARTICLES*/
+
+    .articles{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .article-recent{
+        padding: 2em 3em 0 3em;
+    }
+
+    .hero-section h1{
+        font-size: 2.5rem;
+        }
+        
+    .hero-section p{
+        font-size: 1rem;
+        }
+        
+    .date-time{
+        font-size: 1rem;
+    }
+
+    .button-container{
+        display: none;
+    }
+
+    /*ABOUT US*/
+
+    .about-us{
+        padding: 1em;
+    }
+
+    .about-us-text{
+        text-align: left;
+        margin-left: 2em;
+    }
+
+    .about-us-info{
+        padding: 1em 6em 0em 6em;
+    }
+
+}
+
+/*MEDIA QUERIES FOR HAMBURGER MENU AND VIEW MORE FOR MOBILE*/
+
+@media (max-width: 767px){
+
+    /*HAMBURGER MENU*/
+
+    .main-menu{
+        list-style: none;
+    }
+    
+    .open-menu{ 
+        cursor: pointer;
+    }
+    
+    .main-menu, .close-menu{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .main-menu{
+        margin: 0;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020;
+        transition: top 1s ease 0s;
+        display: none;
+        color: #FAFAFA;
+    }
+
+    nav a{
+        color: #FAFAFA;
+    }
+
+    li{
+        margin-bottom: 1em;
+    }
+
+    /*VIEW MORE BTN*/
+
+    .hidden{
+        display: none;
+    }
+}
